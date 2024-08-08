@@ -5,7 +5,6 @@ import UsersComponent from "@/components/users/UsersComponent";
 
 const Page = async () => {
     let users = await userService.getAllUsers();
-    console.log(users);
     return (
         <div>
             <UsersComponent users={users}/>

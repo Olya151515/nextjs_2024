@@ -1,9 +1,16 @@
-import React from 'react';
+import React, {FC} from 'react';
+import {IPost} from "@/models/post/IPost";
+import PostComponent from "@/components/posts/PostComponent";
+type IProps ={
+    posts:IPost[]
+}
 
-const PostsComponent = () => {
+const PostsComponent:FC<IProps> = ({posts}) => {
     return (
         <div>
-            posts
+            {
+                posts.map(post => <PostComponent key={post.id} post={post}/>)
+            }
         </div>
     );
 };

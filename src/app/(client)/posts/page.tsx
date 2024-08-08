@@ -1,9 +1,12 @@
 import React from 'react';
+import PostsComponent from "@/components/posts/PostsComponent";
+import {postsService} from "@/services/api.service";
 
-const Page = () => {
+const Page = async () => {
+    let posts = await postsService.getAllPosts();
     return (
         <div>
-            posts
+            <PostsComponent posts={posts}/>
         </div>
     );
 };
