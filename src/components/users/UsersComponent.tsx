@@ -1,9 +1,16 @@
-import React from 'react';
+import React, {FC} from 'react';
+import {IUser} from "@/models/user/IUser";
+import UserComponent from "@/components/users/UserComponent";
+type IProps ={
+    users:IUser[]
+}
 
-const UsersComponent = () => {
+const UsersComponent:FC<IProps> = ({users}) => {
     return (
         <div>
-            users
+            {
+                users.map(user => <UserComponent key={user.id} user={user}/>)
+            }
         </div>
     );
 };

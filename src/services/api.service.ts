@@ -3,7 +3,7 @@ import {IPost} from "@/models/post/IPost";
 import {IComment} from "@/models/comment/IComment";
 
 const userService ={
-    getAllUsers: async () =>{
+    getAllUsers: async ():Promise<IPost[]>  =>{
      let users =  await fetch('https://jsonplaceholder.typicode.com/users')
            .then(value => value.json());
 
