@@ -1,20 +1,14 @@
 import React from 'react';
-import {postsService, userService} from "@/services/api.service";
+import {postsService} from "@/services/api.service";
 import PostComponent from "@/components/posts/PostComponent";
+import UserWithPostsComponent from "@/components/users/UserWithPostsComponent";
 
-const Page =async ({params:{id}}) => {
-    let user = await userService.getUserById(id);
-    let posts = await postsService.getPostByUserId(id);
+const Page = async ({searchParams}):any => {
+    let user  = JSON.parse(searchParams.data);
+    let posts = await postsService.getPostByUserId(user.id);
     return (
         <div>
-            id:{user.id} <br/>
-            Name:{user.name} <br/>
-            UserNAme:{user.username} <br/>
-            Email:{user.email} <br/>
-            Posts: <br/>
-            {
-                posts.map(post =><PostComponent post={post}/>)
-            }
+            <UserWithPostsComponent user={user} posts={posts}/>
         </div>
     );
 };

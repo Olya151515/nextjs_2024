@@ -8,11 +8,6 @@ const userService ={
            .then(value => value.json());
      return users;
     },
-    getUserById:async (id:string):Promise<IUser> =>{
-        let user:IUser =  await fetch('https://jsonplaceholder.typicode.com/users/'+id)
-            .then(value => value.json());
-        return user;
-    }
 
 }
 const postsService = {
@@ -32,7 +27,13 @@ const commentsService = {
        let comments:IComment[] = await fetch('https://jsonplaceholder.typicode.com/comments')
             .then(value => value.json());
        return comments
+    },
+    getCommentSByPostId:async (postId:string):Promise<IComment[]> =>{
+        let comments:IComment[] = await fetch('https://jsonplaceholder.typicode.com/posts/'+postId+'/comments')
+            .then(value => value.json());
+        return comments;
     }
+
 }
 
 export {

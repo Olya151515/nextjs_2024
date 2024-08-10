@@ -9,7 +9,12 @@ type IProps ={
 const UserComponent:FC<IProps> = ({user}) => {
     return (
         <div>
-            userID:{user.id} -username:{user.username} <Link href={'/users/'+user.id}>details</Link>
+            userID:{user.id} -username:{user.username} <Link href={
+            {
+                pathname: '/users/'+user.id,
+                query:{data:JSON.stringify(user)}
+            }
+            }>details</Link>
         </div>
     );
 };
