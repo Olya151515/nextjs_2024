@@ -1,0 +1,42 @@
+.bodyMovie{
+    background-color: #333131;
+    margin: 0;
+}
+.headerStyle{
+    background-color: #2c2b2b;
+}
+
+.oneMovie{
+    width: 15vw;
+    height: 60vh;
+    margin: 20px;
+    flex-direction: column;
+}
+.allMovies{
+    display: flex;
+    flex-wrap: wrap;
+   justify-content: space-evenly;
+}
+.imgPoster{
+    width: 15vw;
+    border-radius: 6px;
+    webkit-box-shadow: 0px 0px 31px 5px rgba(34, 60, 80, 0.2);
+    moz-box-shadow: 0px 0px 31px 5px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 0px 31px 5px rgba(34, 60, 80, 0.2);
+}
+.imgPoster:hover{
+    width: 17vw;
+    transition: 900ms;
+    transform: scale(1);
+}
+.paginationStyle{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+
+}
+.titleMovie{
+    display: flex;
+    justify-content: center;
+    color: #e75959;
+}
