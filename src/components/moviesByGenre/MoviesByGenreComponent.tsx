@@ -4,23 +4,25 @@ import React, {FC} from 'react';
 import {IMovie} from "@/models/movies/IMovie";
 import MovieByGenreComponent from "@/components/moviesByGenre/MovieByGenreComponent";
 import styles from "/src/components/moviesByGenre/styleMoviesBygenre/StyleMoviesWithgenre.module.css";
-import {useSearchParams} from "next/navigation";
+import {usePathname, useSearchParams} from "next/navigation";
 import PaginationComponent from "@/components/pagination/PaginationComponent";
 
 type IProps = {
-    movies:IMovie[]
+    movies:IMovie[],
 }
 const MoviesByGenreComponent:FC<IProps> = ({movies}) => {
     const searchParams = useSearchParams();
     const currentPage = parseInt(searchParams.get('page') || '1');
-    console.log(movies);
+    const currentId = parseInt(searchParams.get('id') || '28');
+
+
     return (
         <div >
             <div className={styles.mainDiv}>
-                {movies.map(movie => <MovieByGenreComponent movie={movie}/>)}
+                {movies?.map(movie => <MovieByGenreComponent movie={movie}/>)}
             </div>
            <div className={styles.stylePagination}>
-               <PaginationComponent currentPage={currentPage} totalPages={37723}/>
+               <PaginationComponent currentId={currentId} currentPage={currentPage} totalPages={37723}/>
            </div>
         </div>
     );

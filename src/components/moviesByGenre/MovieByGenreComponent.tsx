@@ -13,7 +13,7 @@ const MovieByGenreComponent:FC<IProps> = ({movie}) => {
     return (
         <div className={styles1.oneCard}>
             <div>
-                <Link href={{pathname:'movies/' +movie.id +'/', query:{data:JSON.stringify(movie)}}}><img className={styles2.imgPoster} src={urlPoster + movie.poster_path} alt="poster"/></Link>
+                <Link href={{pathname:'/movies/' +movie.id, query:{data:JSON.stringify(movie)}}}><img className={styles2.imgPoster} src={urlPoster + movie.poster_path} alt="poster"/></Link>
             </div>
            <div className={styles1.titleDiv}>
                {movie.title}

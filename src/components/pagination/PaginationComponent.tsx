@@ -1,13 +1,13 @@
-import React, {FC, useState} from 'react';
-import {useSearchParams} from "next/navigation";
-import {pagination} from "@/services/api.services";
+
+import React, {FC} from 'react';
 import Link from "next/link";
+import {usePathname} from "next/navigation";
+
 type IProps = {
     currentPage : number,
     totalPages:number
 }
 const PaginationComponent:FC<IProps> = ({currentPage,totalPages}) => {
-
     return (
         <div>
             <Link href={`?page=${currentPage-1}`}>

@@ -4,15 +4,15 @@ import {IGenre} from "@/models/genres/IGenre";
 import GenresComponent from "@/components/genre/GenresComponent";
 import MoviesByGenreComponent from "@/components/moviesByGenre/MoviesByGenreComponent";
 import styles  from "/src/app/page.module.css";
+import {usePathname} from "next/navigation";
 
 const Page = async ({searchParams}:any) => {
     let responseGenres:IGenre[] = await genres.getGenres();
-    let responseMoviesByGenre = await moviesService.getMoviesByGenreId(searchParams.id || '28', searchParams.page || '1');
-    console.log(searchParams);
+    let responseMoviesByGenre = await moviesService.getMoviesByGenreId(searchParams.id || '28',searchParams.page || '1');
     return (
         <div  className={styles.boxMoviesByGenre}>
-            <GenresComponent genres={responseGenres}/>
-            <MoviesByGenreComponent movies={responseMoviesByGenre.results}/>
+            <GenresComponent genres={responseGenres} page={searchParams.page} movies={responseMoviesByGenre.results}/>
+            <MoviesByGenreComponent movies={responseMoviesByGenre.results} currentPage={searchParams.page}/>
         </div>
     );
 };

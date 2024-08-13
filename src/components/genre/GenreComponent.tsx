@@ -3,13 +3,16 @@ import {IGenre} from "@/models/genres/IGenre";
 import styles from "/src/components/genre/styleGenre/GenresStyle.module.css";
 import Link from "next/link";
 type IProps ={
-    genre:IGenre
+    genre:IGenre,
+    page:string
 }
 
-const GenreComponent:FC<IProps> = ({genre}) => {
+const GenreComponent:FC<IProps> = ({genre,page}) => {
     return (
         <div className={styles.oneGenre}>
-            <Link className={styles.styleLinkGenre} href={{pathname:'/genres/'+ genre.id, query:{id:JSON.stringify(genre.id)}}
+            <Link className={styles.styleLinkGenre} href={{pathname:'/genres/id:'+ genre.id, query:{
+                id:JSON.stringify(genre.id),
+                page:'1'}}
                 }>{genre.name}</Link>
         </div>
     );
