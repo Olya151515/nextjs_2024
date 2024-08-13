@@ -14,10 +14,6 @@ export default function RootLayout({children}: Readonly<PropType>) {
   return (
     <html lang="en">
       <body className={styles.bodyMovie}>
-      <HeaderComponent/>
-      {/*<div className={styles.headerStyle}>*/}
-      {/*    <HeaderComponent/>*/}
-      {/*</div>*/}
       {children}
       </body>
     </html>

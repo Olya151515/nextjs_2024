@@ -8,7 +8,7 @@ const HeaderComponent = () => {
             <ul className={styles.ulStyle}>
                 <li className={styles.liStyle}><Link className={styles.liStyle} href={'/'}>home</Link></li>
                 <li className={styles.liStyle}><Link className={styles.liStyle} href={'/movies?page=1'}>movies</Link></li>
-                <li className={styles.liStyle}><Link className={styles.liStyle} href={'/genres'}>genres</Link></li>
+                <li className={styles.liStyle}><Link className={styles.liStyle} href={'/genres/id/28'}>genres</Link></li>
             </ul>
         </div>
     );

@@ -11,9 +11,7 @@ const MovieComponentModule:FC<IProps> = ({movie}) => {
         <div className={styles.oneMovie}>
             <div key={movie.id}>
                 <Link href={{pathname:'/movies/'+movie.id , query:{data: JSON.stringify((movie))}}}><img className={styles.imgPoster} src={urlPoster + movie.poster_path}
-                                     alt="first"/>
-                </Link>
-
+                                     alt="first"/></Link>
             </div>
             <div className={styles.titleMovie}>
                 {movie.title}

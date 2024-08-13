@@ -7,6 +7,8 @@ const Page = ({searchParams}:any) => {
     return (
         <div>
             <img src={urlPoster+movie.poster_path} alt="photo"/>
+
+            it is one movie info
         </div>
     );
 };

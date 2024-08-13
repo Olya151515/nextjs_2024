@@ -1,5 +1,5 @@
 .bodyMovie{
-    background-color: #333131;
+    background-color: #110e0e;
     margin: 0;
 }
 .headerStyle{
@@ -23,11 +23,11 @@
     webkit-box-shadow: 0px 0px 31px 5px rgba(34, 60, 80, 0.2);
     moz-box-shadow: 0px 0px 31px 5px rgba(34, 60, 80, 0.2);
     box-shadow: 0px 0px 31px 5px rgba(34, 60, 80, 0.2);
+    transition: 1s;
 }
 .imgPoster:hover{
     width: 17vw;
-    transition: 900ms;
-    transform: scale(1);
+    transition: 1.5s ;
 }
 .paginationStyle{
     margin: 20px;
