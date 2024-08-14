@@ -1,18 +1,23 @@
 
 .headerStyle{
-    background-color: #362727;
+    background-color: #150f0f;
     height: 10vh;
     margin:0;
 }
 
 .ulStyle{
     display: flex;
-    margin-left: 50vw ;
+    margin-left: 30vw ;
 }
 .liStyle{
     margin:10px;
-    background-color: #c53434;
     color: white;
     text-decoration: none;
+    list-style: none;
 }
-
+.liStyle:hover{
+    color: red;
+}
+.inputStyle{
+    height: 4vh;
+}

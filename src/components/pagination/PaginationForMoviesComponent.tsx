@@ -1,13 +1,11 @@
-
 import React, {FC} from 'react';
 import Link from "next/link";
-import {usePathname} from "next/navigation";
 
 type IProps = {
     currentPage : number,
     totalPages:number
 }
-const PaginationComponent:FC<IProps> = ({currentPage,totalPages}) => {
+const PaginationForMoviesComponent:FC<IProps> = ({currentPage,totalPages}) => {
     return (
         <div>
             <Link href={`?page=${currentPage-1}`}>
@@ -21,4 +19,4 @@ const PaginationComponent:FC<IProps> = ({currentPage,totalPages}) => {
     );
 };
 
-export default PaginationComponent;
+export default PaginationForMoviesComponent;

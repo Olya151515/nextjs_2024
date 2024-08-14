@@ -15,9 +15,18 @@ const moviesService ={
            .then(value => value.json());
     },
     getMoviesByGenreId: async (genreId:string,currentPage:string):Promise<MovieResponse> =>{
-        let response =  await fetch('https://api.themoviedb.org/3/discover/movie?page='+currentPage+'&with_genres='+genreId, {headers:myHeaders})
+        return await fetch('https://api.themoviedb.org/3/discover/movie?page='+currentPage+'&with_genres='+genreId, {headers:myHeaders})
             .then(value => value.json());
-        return  response;
+    },
+    getDetailsOfMovieById : async (id:number)=>{
+        return await fetch(urlsApi.movies.getDetailsOFMovieById+id,
+            {headers:myHeaders})
+            .then(value => value.json());
+    },
+    getSearchedMovies: async (query:string):Promise<MovieResponse> =>{
+        return await fetch(urlsApi.movies.getSearchedMovies +'?query='+query ,
+            {headers:myHeaders})
+            .then(value => value.json());
     }
 }
 const  genres ={
@@ -27,15 +36,8 @@ const  genres ={
             .then(value => value.json());
         return response.genres
     }
+
 }
-
-// const  pagination ={
-//      decrementSearchParams : (searchParams:URLSearchParams) =>{
-//         let currentPage = +(searchParams.get('page') || '1');
-//         return (currentPage-1).toString();
-//     }
-// }
-
 export {
     moviesService,
     genres

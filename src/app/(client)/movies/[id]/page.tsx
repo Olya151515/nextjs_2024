@@ -1,14 +1,14 @@
 import React from 'react';
 import {IMovie} from "@/models/movies/IMovie";
-import {urlPoster} from "@/constants/urls/urls";
+import {moviesService} from "@/services/api.services";
+import MovieDescComponent from "@/components/movie/MovieDescComponent";
 
-const Page = ({searchParams}:any) => {
+const Page = async ({searchParams}:any) => {
     let movie:IMovie = JSON.parse(searchParams.data);
+    let movieDetails = await moviesService.getDetailsOfMovieById(movie.id);
     return (
         <div>
-            <img src={urlPoster+movie.poster_path} alt="photo"/>
-
-            it is one movie info
+            <MovieDescComponent movie={movie} genres={movieDetails.genres} runtime={movieDetails.runtime}/>
         </div>
     );
 };

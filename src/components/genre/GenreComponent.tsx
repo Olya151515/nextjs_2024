@@ -10,7 +10,7 @@ type IProps ={
 const GenreComponent:FC<IProps> = ({genre,page}) => {
     return (
         <div className={styles.oneGenre}>
-            <Link className={styles.styleLinkGenre} href={{pathname:'/genres/id:'+ genre.id, query:{
+            <Link className={styles.styleLinkGenre} href={{pathname:'/genres', query:{
                 id:JSON.stringify(genre.id),
                 page:'1'}}
                 }>{genre.name}</Link>

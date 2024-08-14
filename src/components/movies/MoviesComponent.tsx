@@ -2,8 +2,8 @@
 import React, {FC} from 'react';
 import {IMovie} from "@/models/movies/IMovie";
 import {useSearchParams} from "next/navigation";
-import PaginationComponent from "@/components/pagination/PaginationComponent";
-import MovieComponentModule from "@/components/movies/MovieComponent.module";
+import PaginationForMoviesComponent from "@/components/pagination/PaginationForMoviesComponent";
+import MovieComponent from "@/components/movies/MovieComponent";
 import styles from "/src/components/movies/MoviesStyle/MoviesStyle.module.css";
 
 type IProps = {
@@ -16,11 +16,11 @@ const MoviesComponent: FC<IProps> = ({movies}) => {
         <div >
             <div className={[styles.allMovies,styles.body].join(' ')}>
                 {
-                    movies?.map(movie => <MovieComponentModule key={movie.id} movie={movie}/>)
+                    movies?.map(movie => <MovieComponent key={movie.id} movie={movie}/>)
                 }
             </div>
             <div className={styles.paginationStyle}>
-                <PaginationComponent currentPage={currentPage} totalPages={10202}/>
+                <PaginationForMoviesComponent currentPage={currentPage} totalPages={10202}/>
             </div>
 
         </div>
